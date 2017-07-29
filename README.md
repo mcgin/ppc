@@ -25,7 +25,7 @@ echo "${PEERCOIN_SRC_SHA}  v${PEERCOIN_VERSION}ppc.tar.gz"|shasum -c
 tar xzf v${PEERCOIN_VERSION}ppc.tar.gz
 cd peercoin-${PEERCOIN_VERSION}ppc/src
 export USE_UPNP=-
-export STATIC=1
+export STATIC=all
 make -f makefile.unix
 strip ppcoind
 mv ppcoind /usr/local/bin/ppcoind

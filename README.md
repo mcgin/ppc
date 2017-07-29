@@ -1,5 +1,5 @@
 # ppc
-
+```
 # https://alexshepherd.me/articles/production-bitcoind-service-on-systemd
 
 
@@ -53,4 +53,4 @@ echo "rpcpassword=R&8B=_dq7}&K7x|vj*wVjp-D4wLjzwKW">>/etc/peercoin/peercoin.conf
 
 ppcoind -daemon -conf=/etc/peercoin/peercoin.conf -datadir=/var/lib/peercoind
 
-
+```

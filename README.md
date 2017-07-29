@@ -40,7 +40,8 @@ sudo chmod 600 /etc/peercoin/peercoin.conf
 
 sudo chown -R peercoin:peercoin /etc/peercoin
 echo "rpcuser=bitcoinrpc">>/etc/peercoin/peercoin.conf
-echo "rpcpassword=R&8B=_dq7}&K7x|vj*wVjp-D4wLjzwKW">>/etc/peercoin/peercoin.conf
+export rpcpass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_`{|}~' | head -c 32 ;)
+echo "rpcpassword=${rpcpass}">>/etc/peercoin/peercoin.conf
 
 
 

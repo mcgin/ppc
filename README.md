@@ -2,6 +2,8 @@
 ```
 # https://alexshepherd.me/articles/production-bitcoind-service-on-systemd
 
+export PEERCOIN_VERSION=0.5.4
+export PEERCOIN_SRC_SHA=5aee5ee92422c10f9c7679b344acd378362e40ba
 
 sudo apt-get update
 sudo apt-get -y install \
@@ -18,9 +20,10 @@ sudo apt-get -y install \
     wget
 
 # Compile peercoin
-wget https://github.com/peercoin/peercoin/archive/v0.5.4ppc.tar.gz
-tar xzf v0.5.4ppc.tar.gz
-cd peercoin-0.5.4ppc/src
+wget https://github.com/peercoin/peercoin/archive/v${PEERCOIN_VERSION}ppc.tar.gz
+echo "${PEERCOIN_SRC_SHA}  v${PEERCOIN_VERSION}ppc.tar.gz"|shasum -c
+tar xzf v${PEERCOIN_VERSION}ppc.tar.gz
+cd peercoin-${PEERCOIN_VERSION}ppc/src
 export USE_UPNP=-
 make -f makefile.unix
 strip ppcoind

@@ -63,6 +63,7 @@ echo "rpcpassword=${rpcpass}">>/etc/peercoin/peercoin.conf
 echo "rpcport=8332">>/etc/peercoin/peercoin.conf
 # Disable rpc on public server
 echo "server=0">>/etc/peercoin/peercoin.conf
+echo "port=8333">>/etc/peercoin/peercoin.conf
 # Accept incoming connections
 echo "listen=1">>/etc/peercoin/peercoin.conf
 # Add the private node's IP to ensure always connected
@@ -85,6 +86,7 @@ echo "rpcport=8332">>/etc/peercoin/peercoin.conf
 echo "server=0">>/etc/peercoin/peercoin.conf
 # Disable incoming connections
 echo "listen=0">>/etc/peercoin/peercoin.conf
+echo "port=8333">>/etc/peercoin/peercoin.conf
 # Add the public node's IP as the only node to connect to
 #connect=69.164.218.197
 ##########################################

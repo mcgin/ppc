@@ -60,12 +60,13 @@ sudo chown -R peercoin:peercoin /etc/peercoin
 echo "rpcuser=bitcoinrpc">>/etc/peercoin/peercoin.conf
 export rpcpass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_`{|}~' | head -c 32 ;)
 echo "rpcpassword=${rpcpass}">>/etc/peercoin/peercoin.conf
-echo "rpcport=8332">>/etc/peercoin/peercoin.conf
+echo "rpcport=9902">>/etc/peercoin/peercoin.conf
 # Disable rpc on public server
 echo "server=0">>/etc/peercoin/peercoin.conf
-echo "port=8333">>/etc/peercoin/peercoin.conf
+echo "port=9901">>/etc/peercoin/peercoin.conf
 # Accept incoming connections
 echo "listen=1">>/etc/peercoin/peercoin.conf
+echo "upnp=0">>/etc/peercoin/peercoin.conf
 # Add the private node's IP to ensure always connected
 #addnode=69.164.218.197
 ##########################################
@@ -77,16 +78,19 @@ echo "listen=1">>/etc/peercoin/peercoin.conf
 ##########################################
 ## https://en.bitcoin.it/wiki/Running_Bitcoin
 ## https://github.com/peercoin/peercoin/wiki/Installation#sample-ppcoin-configuration
+## ppcoind --help
+
 # RPC
 echo "rpcuser=bitcoinrpc">>/etc/peercoin/peercoin.conf
 export rpcpass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_`{|}~' | head -c 32 ;)
 echo "rpcpassword=${rpcpass}">>/etc/peercoin/peercoin.conf
-echo "rpcport=8332">>/etc/peercoin/peercoin.conf
+echo "rpcport=9902">>/etc/peercoin/peercoin.conf
 # Disable rpc on private server
 echo "server=0">>/etc/peercoin/peercoin.conf
+echo "port=9901">>/etc/peercoin/peercoin.conf
 # Disable incoming connections
 echo "listen=0">>/etc/peercoin/peercoin.conf
-echo "port=8333">>/etc/peercoin/peercoin.conf
+echo "upnp=0">>/etc/peercoin/peercoin.conf
 # Add the public node's IP as the only node to connect to
 #connect=69.164.218.197
 ##########################################
